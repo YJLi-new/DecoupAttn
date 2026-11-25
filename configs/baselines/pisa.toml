@@ -1,0 +1,25 @@
+[default]
+density = 0.20
+block_size = 64
+use_bias = true
+
+[cp1]
+
+[cp25]
+
+[wan21]
+
+[wan22]
+
+[hy]
+
+[nano]
+
+[t25]
+
+[dr]
+use_bias = false
+
+[alaya]
+
+[unirelight]

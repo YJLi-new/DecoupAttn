@@ -1,0 +1,62 @@
+diff --git a/piecewise_attn/kernels/piecewise_sparse_attn_hyd.py b/piecewise_attn/kernels/piecewise_sparse_attn_hyd.py
+index 2afd887..2e67d61 100755
+--- a/piecewise_attn/kernels/piecewise_sparse_attn_hyd.py
++++ b/piecewise_attn/kernels/piecewise_sparse_attn_hyd.py
+@@ -196,7 +196,7 @@ def fused_chunk_reduce(q, k, v, chunk_size, use_bias=False, p=2):
+ def piecewise_sparse_attention_fwd_kernel(
+     q, k, v,
+     kc, vc,
+-    h, o,
++    h, o, lse,
+     indices,
+     scale,
+     T,
+@@ -207,6 +207,7 @@ def piecewise_sparse_attention_fwd_kernel(
+     BV: tl.constexpr,
+     NT: tl.constexpr,
+     NS: tl.constexpr,
++    STORE_LSE: tl.constexpr,
+     GROUP_SIZE: tl.constexpr
+ ):
+     i_v, i_t, i_bh = tl.program_id(0), tl.program_id(1), tl.program_id(2)
+@@ -298,9 +299,15 @@ def piecewise_sparse_attention_fwd_kernel(
+     p_o = tl.make_tensor_descriptor(o + i_bh * T * V, (T, V), (V, 1), (BT, BV))
+     p_o.store([i_t * BT, i_v * BV], acc.to(b_q.dtype))
+ 
++    if STORE_LSE:
++        if i_v == 0:
++            offs = i_t * BT + tl.arange(0, BT)
++            tl.store(lse + i_bh * T + offs, (m_i + tl.log2(l_i)) * 0.6931471805599453, mask=offs < T)
++
+ 
+ # @torch.compile
+-def piecewise_sparse_attention(q, k, v, density=0.1, block_size=64, scale=None, use_bias=False, sink_idx=None):
++def piecewise_sparse_attention(q, k, v, density=0.1, block_size=64, scale=None, use_bias=False, sink_idx=None,
++                               return_lse=False):
+     triton.set_allocator(_make_tma_allocator())
+ 
+     if not supports_host_descriptor():
+@@ -331,17 +338,19 @@ def piecewise_sparse_attention(q, k, v, density=0.1, block_size=64, scale=None,
+     indices = torch.topk(score, k=top_k, dim=-1).indices 
+     
+     o = torch.empty_like(v)
++    lse = torch.empty(B, H, T, device=v.device, dtype=torch.float32) if return_lse else o
+ 
+     grid = (triton.cdiv(V, BV), NT, B * H)
+     piecewise_sparse_attention_fwd_kernel[grid](
+         q=q, k=k, v=v,
+         kc=kc, vc=vc,
+-        h=h, o=o,
++        h=h, o=o, lse=lse,
+         indices=indices,
+         scale=scale,
+         T=T, K=K, V=V,
+         BT=block_size, BK=BK, BV=BV,
+-        NT=NT, NS=top_k
++        NT=NT, NS=top_k,
++        STORE_LSE=return_lse
+     )
+-    
+-    return o
++
++    return (o, lse) if return_lse else o

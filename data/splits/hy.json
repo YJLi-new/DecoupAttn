@@ -1,0 +1,28 @@
+{
+ "model": "hy",
+ "seed": 1000,
+ "calib": [
+  "train_00",
+  "train_01"
+ ],
+ "val": [
+  "val_00",
+  "val_01",
+  "val_02",
+  "val_03",
+  "val_04",
+  "val_05",
+  "val_06",
+  "val_07"
+ ],
+ "test": [
+  "test_00",
+  "test_01",
+  "test_02",
+  "test_03",
+  "test_04",
+  "test_05",
+  "test_06",
+  "test_07"
+ ]
+}

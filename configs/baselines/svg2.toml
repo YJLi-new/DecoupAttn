@@ -1,0 +1,69 @@
+[default]
+num_q_centroids = 300
+num_k_centroids = 1000
+min_kc_ratio = 0.10
+kmeans_iter_init = 50
+kmeans_iter_step = 2
+zero_step_kmeans_init = false
+per_branch = false
+rematch = false
+match_scheme = "interp"
+match_clips = 2
+match_iters = 6
+match_range = [0.2, 0.98]
+match_start = 0.7642
+match_band = [0.195, 0.205]
+
+[cp1]
+top_p = 0.6037
+
+[cp25]
+top_p = 0.7834
+match_scheme = "bisect"
+match_range = [0.3, 0.98]
+match_iters = 9
+match_band = [0.1985, 0.2015]
+
+[wan21]
+top_p = 0.3956
+match_scheme = "bisect"
+match_range = [0.3, 0.98]
+match_iters = 9
+match_band = [0.1985, 0.2015]
+
+[wan22]
+top_p = 0.3027
+match_scheme = "bisect"
+match_range = [0.3, 0.98]
+match_iters = 9
+match_band = [0.1985, 0.2015]
+
+[hy]
+top_p = 0.6953
+num_q_centroids = 400
+zero_step_kmeans_init = true
+match_clips = 1
+match_iters = 4
+match_range = [0.05, 0.98]
+match_start = 0.5
+
+[nano]
+top_p = 0.4169
+per_branch = true
+match_scheme = "bisect"
+match_range = [0.3, 0.98]
+match_iters = 9
+match_band = [0.1985, 0.2015]
+
+[t25]
+top_p = 0.7459
+
+[dr]
+top_p = 0.45
+
+[alaya]
+top_p = 0.7263
+match_clips = 8
+
+[unirelight]
+top_p = 0.502

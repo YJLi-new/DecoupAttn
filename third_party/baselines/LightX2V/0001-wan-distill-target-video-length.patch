@@ -1,0 +1,18 @@
+diff --git a/lightx2v/pipeline.py b/lightx2v/pipeline.py
+index f25dd67..1770a79 100755
+--- a/lightx2v/pipeline.py
++++ b/lightx2v/pipeline.py
+@@ -215,6 +215,13 @@ class LightX2VPipeline:
+             )
+ 
+         config = set_config(self)
++        n = getattr(self, "target_video_length", None)
++        if n is not None and "target_video_length" not in config:
++            try:
++                config["target_video_length"] = n
++            except Exception:
++                with config.temporarily_unlocked():
++                    config["target_video_length"] = n
+         validate_config_paths(config)
+ 
+         if config["parallel"]:

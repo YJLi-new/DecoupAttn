@@ -1,0 +1,54 @@
+[model]
+key = "dr"
+name = "DiffusionRenderer (Cosmos 7B, forward)"
+family = "renderer"
+repo = "@DATA_ROOT@/repos/cosmos1-diffusion-renderer"
+repo_url = "https://github.com/nv-tlabs/cosmos1-diffusion-renderer"
+dense_backend = "fa3"
+reference_backend = "native"
+floor_backend = "fa3"
+forward = "fast"
+inductor_pins = ""
+
+[checkpoints]
+dir = "@DATA_ROOT@/repos/cosmos1-diffusion-renderer/checkpoints"
+
+[sampler]
+steps = 4
+branches = ["cond"]
+frames = 57
+height = 704
+width = 1280
+guidance = 0.0
+
+[attention]
+n_layers = 28
+n_heads = 32
+head_dim = 128
+latent_grid = [8, 44, 80]
+
+[plan]
+layout = "steps"
+rows = [1, 2, 3]
+block_shape = [2, 4, 16]
+
+[data]
+clips = "@DATA_ROOT@/clips"
+hdri = "@DATA_ROOT@/hdri"
+splits = "data/splits/dr.json"
+work = "@DATA_ROOT@/work/dr"
+
+[eval]
+ssim = "gaussian"
+
+[planner]
+stale_db = 0.46
+smax = 1.23
+plan_extra = {v3 = 1, tiling = "LQ"}
+
+[planner.sensitivity]
+kind = "injection"
+step_groups = [[1, 1], [2, 2], [3, 3]]
+
+[runtime]
+fast = true

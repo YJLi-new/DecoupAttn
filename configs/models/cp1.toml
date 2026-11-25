@@ -1,0 +1,53 @@
+[model]
+key = "cp1"
+name = "Cosmos-Predict1-7B-Video2World"
+family = "video"
+repo = "@DATA_ROOT@/repos/cosmos-predict1"
+repo_url = "https://github.com/nvidia-cosmos/cosmos-predict1"
+commit = "724daa1"
+dense_backend = "fa3"
+floor_backend = "fi"
+
+[checkpoints]
+predict1 = "@DATA_ROOT@/checkpoints/Cosmos-Predict1-7B-Video2World"
+tokenizer = "@DATA_ROOT@/checkpoints/Cosmos-Tokenize1-CV8x8x8-720p"
+t5_embeddings = ""
+
+[sampler]
+steps = 35
+branches = ["cond", "uncond"]
+frames = 121
+height = 704
+width = 1280
+guidance = 7.0
+fps = 24
+
+[attention]
+n_layers = 28
+n_heads = 32
+head_dim = 128
+latent_grid = [16, 44, 80]
+
+[plan]
+layout = "rows"
+rows = [1, 2, 4, 7, 11, 15, 20, 26, 32]
+
+[data]
+clips = "@DATA_ROOT@/clips"
+splits = "data/splits/cp1.json"
+work = "@DATA_ROOT@/work/cp1"
+
+[eval]
+ssim = "gaussian"
+
+[planner]
+stale_db = 2.35
+smax = 1.91
+
+[planner.sensitivity]
+kind = "injection"
+step_groups = [[1, 3], [4, 9], [10, 13], [14, 23], [24, 29], [30, 34]]
+
+[runtime]
+fast = true
+free_plans_at_end = true

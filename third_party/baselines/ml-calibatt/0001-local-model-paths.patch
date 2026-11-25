@@ -1,0 +1,15 @@
+diff --git a/wan_distilled_run.py b/wan_distilled_run.py
+index 0501183..e00058c 100644
+--- a/wan_distilled_run.py
++++ b/wan_distilled_run.py
+@@ -119,8 +119,8 @@ model_cls = config.get("model_cls", "wan2.1_distill")
+ task = config.get("task", "t2v")
+ 
+ # Download models from HuggingFace (cached locally)
+-model_path = snapshot_download(model_id, revision="a064a6c71f5be440641209c07bf2a5ce7a2ff5e4")
+-dit_original_ckpt = hf_hub_download(distill_model_id, distill_ckpt_filename, revision="7238d01723d1cf8ccc4d030dff695363f5e47bc3")
++model_path = os.environ.get("CALIBATT_MODEL_PATH") or snapshot_download(model_id, revision="a064a6c71f5be440641209c07bf2a5ce7a2ff5e4")
++dit_original_ckpt = os.environ.get("CALIBATT_DIT_CKPT") or hf_hub_download(distill_model_id, distill_ckpt_filename, revision="7238d01723d1cf8ccc4d030dff695363f5e47bc3")
+ 
+ # Extract video parameters from config
+ height = config.video.height

@@ -1,0 +1,8 @@
+name = "LightX2V"
+url = "https://github.com/ModelTC/LightX2V"
+commit = "e7262940e8fcd63a91659ef1e9a2c2bb611480f2"
+dest = "LightX2V"
+license = "Apache-2.0"
+submodules = false
+patches = ["0001-wan-distill-target-video-length.patch"]
+used_by = ["calibatt"]

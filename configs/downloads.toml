@@ -1,0 +1,228 @@
+[cp1]
+license = "code Apache-2.0; weights NVIDIA Open Model License (gated)"
+
+[[cp1.repos]]
+url = "https://github.com/nvidia-cosmos/cosmos-predict1"
+commit = "724daa1"
+dest = "repos/cosmos-predict1"
+
+[[cp1.weights]]
+repo = "nvidia/Cosmos-Predict1-7B-Video2World"
+dest = "checkpoints/Cosmos-Predict1-7B-Video2World"
+gib = 13.48
+gated = true
+
+[[cp1.weights]]
+repo = "nvidia/Cosmos-Tokenize1-CV8x8x8-720p"
+dest = "checkpoints/Cosmos-Tokenize1-CV8x8x8-720p"
+gib = 1.77
+
+[[cp1.weights]]
+repo = "google-t5/t5-11b"
+dest = "work/cp1/checkpoints/google-t5/t5-11b"
+include = ["config.json", "spiece.model", "tokenizer.json", "pytorch_model.bin"]
+gib = 42.13
+optional = true
+
+[cp25]
+license = "code Apache-2.0; weights NVIDIA Open Model License (Predict2.5 gated)"
+
+[[cp25.repos]]
+url = "https://github.com/nvidia-cosmos/cosmos-predict2.5"
+commit = "a2c298b0"
+dest = "repos/cosmos-predict2.5"
+
+[[cp25.weights]]
+repo = "nvidia/Cosmos-Predict2.5-2B"
+dest = "checkpoints/Cosmos-Predict2.5-2B"
+include = ["base/distilled/*", "tokenizer.pth", "*.md"]
+gib = 4.31
+gated = true
+
+[[cp25.weights]]
+repo = "nvidia/Cosmos-Reason1-7B"
+dest = "checkpoints/Cosmos-Reason1-7B"
+gib = 15.45
+
+[wan21]
+license = "Apache-2.0"
+
+[[wan21.weights]]
+repo = "Wan-AI/Wan2.1-T2V-14B-Diffusers"
+dest = "checkpoints/Wan2.1-T2V-14B-Diffusers"
+include = ["text_encoder/*", "tokenizer/*", "vae/*", "scheduler/*", "transformer/config.json", "model_index.json", "*.md"]
+gib = 21.66
+
+[[wan21.weights]]
+repo = "lightx2v/Wan2.1-Distill-Models"
+dest = "checkpoints/Wan2.1-Distill-Models"
+include = ["wan2.1_t2v_14b_lightx2v_4step.safetensors", "config.json", "README.md"]
+gib = 26.61
+
+[wan22]
+license = "Apache-2.0"
+derived = ["checkpoints/Wan2.2-T2V-A14B-lightx2v4step-merged"]
+
+[[wan22.weights]]
+repo = "Wan-AI/Wan2.2-T2V-A14B-Diffusers"
+dest = "checkpoints/Wan2.2-T2V-A14B-Diffusers"
+include = ["transformer/*", "transformer_2/*", "scheduler/*", "tokenizer/*", "model_index.json", "*.md"]
+gib = 106.48
+
+[[wan22.weights]]
+repo = "lightx2v/Wan2.2-Distill-Loras"
+dest = "checkpoints/Wan2.2-Distill-Loras"
+include = ["*t2v_A14b*1217*", "*.md", "*.json"]
+gib = 1.14
+
+[[wan22.weights]]
+repo = "Wan-AI/Wan2.1-T2V-14B-Diffusers"
+dest = "checkpoints/Wan2.1-T2V-14B-Diffusers"
+include = ["text_encoder/*", "tokenizer/*", "vae/*", "scheduler/*", "transformer/config.json", "model_index.json", "*.md"]
+gib = 21.66
+
+[hy]
+license = "code: DCM (no license file); weights Tencent Hunyuan Community License, DCM_HY MIT"
+derived = ["checkpoints/HunyuanVideo/transformer_diffusers"]
+post = ["python scripts/convert_hunyuan_transformer.py"]
+
+[[hy.repos]]
+url = "https://github.com/Vchitect/DCM"
+commit = "c7039e8"
+dest = "repos/DCM"
+
+[[hy.weights]]
+repo = "cszy98/DCM"
+dest = "checkpoints/DCM"
+include = ["DCM_HY/*"]
+exclude = ["DCM_HY/transformer/*.safetensors"]
+gib = 15.14
+
+[[hy.weights]]
+repo = "tencent/HunyuanVideo"
+dest = "checkpoints/HunyuanVideo"
+include = ["hunyuan-video-t2v-720p/transformers/mp_rank_00_model_states.pt", "README.md", "config.json"]
+gib = 23.88
+
+[nano]
+license = "OpenMDW 1.1"
+
+[[nano.weights]]
+repo = "nvidia/Cosmos3-Nano"
+dest = "checkpoints/Cosmos3-Nano"
+gib = 32.58
+
+[t25]
+license = "code Apache-2.0; weights NVIDIA Open Model License (Transfer2.5 and Predict2.5 gated)"
+
+[[t25.repos]]
+url = "https://github.com/nvidia-cosmos/cosmos-transfer2.5"
+commit = "2ff49d0"
+dest = "repos/cosmos-transfer2.5"
+
+[[t25.weights]]
+repo = "nvidia/Cosmos-Transfer2.5-2B"
+dest = "checkpoints/Cosmos-Transfer2.5-2B"
+include = ["distilled/general/edge/41f07f13-f2e4-4e34-ba4c-86f595acbc20_ema_bf16.pt", "*.md"]
+gib = 4.39
+gated = true
+
+[[t25.weights]]
+repo = "nvidia/Cosmos-Predict2.5-2B"
+dest = "checkpoints/Cosmos-Predict2.5-2B"
+include = ["tokenizer.pth", "*.md"]
+gib = 0.47
+gated = true
+
+[[t25.weights]]
+repo = "nvidia/Cosmos-Reason1-7B"
+dest = "checkpoints/Cosmos-Reason1-7B"
+gib = 15.45
+
+[[t25.weights]]
+repo = "google/siglip2-so400m-patch16-naflex"
+dest = ""
+include = ["*.json", "*.model"]
+gib = 0.04
+
+[dr]
+license = "code Apache-2.0; weights NVIDIA Open Model License"
+
+[[dr.repos]]
+url = "https://github.com/nv-tlabs/cosmos1-diffusion-renderer"
+commit = "0f3e2dc"
+dest = "repos/cosmos1-diffusion-renderer"
+
+[[dr.weights]]
+repo = "nvidia/Diffusion_Renderer_Forward_Cosmos_7B"
+dest = "repos/cosmos1-diffusion-renderer/checkpoints/Diffusion_Renderer_Forward_Cosmos_7B"
+gib = 26.96
+
+[[dr.weights]]
+repo = "nvidia/Cosmos-Tokenize1-CV8x8x8-720p"
+dest = "repos/cosmos1-diffusion-renderer/checkpoints/Cosmos-Tokenize1-CV8x8x8-720p"
+gib = 1.77
+
+[alaya]
+license = "Apache-2.0"
+
+[[alaya.repos]]
+url = "https://github.com/AlayaLab/AlayaRenderer"
+commit = "38351f6"
+dest = "repos/AlayaRenderer"
+
+[[alaya.weights]]
+repo = "AlayaLab/AlayaRenderer"
+dest = "checkpoints/AlayaRenderer"
+gib = 2.64
+
+[[alaya.weights]]
+repo = "Wan-AI/Wan2.1-T2V-1.3B"
+dest = "checkpoints/Wan2.1-T2V-1.3B"
+include = ["models_t5_umt5-xxl-enc-bf16.pth", "Wan2.1_VAE.pth", "google/*", "config.json"]
+gib = 11.07
+
+[unirelight]
+license = "code and weights: NVIDIA licenses on the repository and model card"
+
+[[unirelight.repos]]
+url = "https://github.com/nv-tlabs/UniRelight"
+commit = "27d86df"
+dest = "repos/UniRelight"
+
+[[unirelight.repos.patches]]
+file = "cosmos_predict1/diffusion/training/models/model.py"
+old = '''
+import amp_C
+import torch
+from apex.multi_tensor_apply import multi_tensor_applier
+'''
+new = '''
+try:
+    import amp_C
+    from apex.multi_tensor_apply import multi_tensor_applier
+except ImportError:
+    amp_C = multi_tensor_applier = None
+import torch
+'''
+
+[[unirelight.repos.patches]]
+file = "cosmos_predict1/diffusion/training/models/model.py"
+old = '''
+l2_norm_impl = amp_C.multi_tensor_l2norm
+multi_tensor_scale_impl = amp_C.multi_tensor_scale
+'''
+new = '''
+l2_norm_impl = amp_C.multi_tensor_l2norm if amp_C else None
+multi_tensor_scale_impl = amp_C.multi_tensor_scale if amp_C else None
+'''
+
+[[unirelight.weights]]
+repo = "nvidia/UniRelight"
+dest = "checkpoints/UniRelight"
+gib = 26.96
+
+[[unirelight.weights]]
+repo = "nvidia/Cosmos-Tokenize1-CV8x8x8-720p"
+dest = "checkpoints/Cosmos-Tokenize1-CV8x8x8-720p"
+gib = 1.77

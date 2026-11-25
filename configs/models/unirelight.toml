@@ -1,0 +1,54 @@
+[model]
+key = "unirelight"
+name = "UniRelight (Cosmos-Predict1-7B multiview)"
+family = "renderer"
+repo = "@DATA_ROOT@/repos/UniRelight"
+repo_url = "https://github.com/nv-tlabs/UniRelight"
+commit = "27d86df"
+dense_backend = "fa3"
+floor_backend = "fi"
+
+[checkpoints]
+unirelight = "@DATA_ROOT@/checkpoints/UniRelight"
+tokenizer = "@DATA_ROOT@/checkpoints/Cosmos-Tokenize1-CV8x8x8-720p"
+
+[sampler]
+steps = 35
+branches = ["cond", "uncond"]
+frames = 57
+height = 480
+width = 848
+guidance = 0.0
+
+[attention]
+n_layers = 28
+n_heads = 32
+head_dim = 128
+latent_grid = [24, 30, 53]
+
+[plan]
+layout = "rows"
+rows = [1, 2, 4, 7, 11, 15, 20, 26, 32]
+
+[data]
+clips = "@DATA_ROOT@/clips"
+hdri = "@DATA_ROOT@/hdri"
+splits = "data/splits/unirelight.json"
+work = "@DATA_ROOT@/work/unirelight"
+
+[eval]
+ssim = "gaussian"
+
+[planner]
+stale_db = 1.87
+smax = 1.404
+
+[planner.sensitivity]
+kind = "injection"
+step_groups = [[1, 9], [10, 17], [18, 29], [30, 34]]
+
+[runtime]
+fast = true
+clamp_steps = false
+lean = true
+lean_hmax = 40

@@ -1,0 +1,55 @@
+[model]
+key = "wan22"
+name = "Wan2.2-T2V-A14B (LightX2V 4-step LoRA, 480p)"
+family = "video"
+repo_url = "https://github.com/Wan-Video/Wan2.2"
+dense_backend = "fa3"
+floor_backend = "fi"
+
+[checkpoints]
+wan22 = "@DATA_ROOT@/checkpoints/Wan2.2-T2V-A14B-Diffusers"
+lora = "@DATA_ROOT@/checkpoints/Wan2.2-Distill-Loras/wan2.2_t2v_A14b_{noise}_noise_lora_rank64_lightx2v_4step_1217.safetensors"
+merged = "@DATA_ROOT@/checkpoints/Wan2.2-T2V-A14B-lightx2v4step-merged"
+diffusers = "@DATA_ROOT@/checkpoints/Wan2.1-T2V-14B-Diffusers"
+
+[sampler]
+steps = 4
+branches = ["cond"]
+frames = 81
+height = 480
+width = 832
+offload = true
+
+[attention]
+n_layers = 40
+n_heads = 40
+head_dim = 128
+latent_grid = [21, 30, 52]
+
+[plan]
+layout = "steps"
+rows = [1, 2, 3]
+
+[data]
+clips = "@DATA_ROOT@/prompts/moviegenbench.json"
+splits = "data/splits/wan22.json"
+work = "@DATA_ROOT@/work/wan22"
+
+[eval]
+ssim = "uniform"
+
+[planner]
+stale_db = 4.348494649325966
+smax = 1.103
+
+[planner.sensitivity]
+kind = "injection"
+step_groups = [[1, 1], [2, 2], [3, 3]]
+
+[runtime]
+fast = true
+
+[paper]
+block_shape = [1, 16, 8]
+psnr = 18.43
+speedup = 1.07

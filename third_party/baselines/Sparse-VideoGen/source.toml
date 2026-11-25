@@ -1,0 +1,8 @@
+name = "Sparse-VideoGen"
+url = "https://github.com/svg-project/Sparse-VideoGen"
+commit = "f89aedaf169ac2ae5b186bda674e53c3dc08c476"
+dest = "Sparse-VideoGen"
+license = "Apache-2.0"
+submodules = ["svg/kernels/3rdparty/flashinfer"]
+patches = []
+used_by = ["svg2", "svgear"]

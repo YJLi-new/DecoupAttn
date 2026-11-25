@@ -1,0 +1,8 @@
+name = "SVOO"
+url = "https://github.com/Mutual-Luo/SVOO"
+commit = "e4ae67b579766bcbe820bda7d34e104ff4c82d5f"
+dest = "SVOO"
+license = "Apache-2.0"
+submodules = true
+patches = []
+used_by = ["svoo"]

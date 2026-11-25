@@ -1,0 +1,88 @@
+[default]
+num_q_centroids = 300
+num_k_centroids = 1000
+kmeans_iter_init = 50
+kmeans_iter_step = 2
+route_refresh_every = 1
+selector_policy = "svg_ear_value"
+selector_budget_mode = "fixed_density"
+flashinfer_plan_reuse = true
+cuda_ext_selector = false
+probe_rows = 64
+repair_rank = 16
+repair_ridge = 0.1
+text_keys = false
+gqa_group_size = 1
+per_branch = false
+rematch = false
+match_scheme = "interp"
+match_clips = 2
+match_iters = 6
+match_range = [0.05, 0.25]
+match_start = 0.1342
+match_band = [0.195, 0.205]
+
+[cp1]
+target_density = 0.1467
+
+[cp25]
+target_density = 0.1609
+route_refresh_every = 4
+match_scheme = "bisect"
+match_range = [0.10, 0.25]
+match_iters = 9
+match_band = [0.1985, 0.2015]
+
+[wan21]
+target_density = 0.1305
+route_refresh_every = 4
+match_scheme = "bisect"
+match_range = [0.10, 0.25]
+match_iters = 9
+match_band = [0.1985, 0.2015]
+
+[wan22]
+target_density = 0.1281
+route_refresh_every = 4
+match_scheme = "bisect"
+match_range = [0.10, 0.25]
+match_iters = 9
+match_band = [0.1985, 0.2015]
+
+[hy]
+target_density = 0.1719
+kmeans_iter_init = 25
+selector_policy = "svg_ear_value"
+match_clips = 1
+match_iters = 4
+match_range = [0.05, 0.4]
+match_start = 0.15
+
+[nano]
+target_density = 0.1650
+kmeans_iter_init = 25
+selector_policy = "svg_ear_value"
+text_keys = true
+gqa_group_size = 4
+per_branch = true
+match_scheme = "bisect"
+match_range = [0.08, 0.25]
+match_iters = 9
+match_band = [0.1985, 0.2015]
+
+[t25]
+target_density = 0.1621
+route_refresh_every = 4
+
+[dr]
+target_density = 0.13
+kmeans_iter_init = 25
+route_refresh_every = 4
+selector_policy = "svg_ear_value"
+cuda_ext_selector = true
+
+[alaya]
+target_density = 0.1342
+
+[unirelight]
+target_density = 0.1342

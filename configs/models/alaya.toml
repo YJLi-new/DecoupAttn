@@ -1,0 +1,52 @@
+[model]
+key = "alaya"
+name = "AlayaRenderer (Wan2.1-T2V-1.3B + G-buffers)"
+family = "renderer"
+repo = "@DATA_ROOT@/repos/AlayaRenderer/game_editing"
+repo_url = "https://github.com/AlayaLab/AlayaRenderer"
+commit = "38351f6"
+dense_backend = "fa3"
+floor_backend = "fi"
+
+[checkpoints]
+alaya = "@DATA_ROOT@/checkpoints/AlayaRenderer"
+wan = "@DATA_ROOT@/checkpoints/Wan2.1-T2V-1.3B"
+
+[sampler]
+steps = 50
+branches = ["cond", "uncond"]
+frames = 81
+height = 480
+width = 832
+guidance = 5.0
+shift = 5.0
+
+[attention]
+n_layers = 30
+n_heads = 12
+head_dim = 128
+latent_grid = [21, 30, 52]
+
+[plan]
+layout = "rows"
+rows = [1, 2, 4, 7, 11, 16, 22, 29, 37, 45]
+block_shape = [4, 4, 8]
+
+[data]
+clips = "@DATA_ROOT@/clips"
+splits = "data/splits/alaya.json"
+work = "@DATA_ROOT@/work/alaya"
+
+[eval]
+ssim = "gaussian"
+
+[planner]
+stale_db = 2.43
+smax = 1.398
+
+[planner.sensitivity]
+kind = "injection"
+step_groups = [[1, 13], [14, 25], [26, 33], [34, 49]]
+
+[runtime]
+fast = true

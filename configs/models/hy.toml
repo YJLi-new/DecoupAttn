@@ -1,0 +1,70 @@
+[model]
+key = "hy"
+name = "HunyuanVideo-T2V-13B"
+family = "video"
+repo = "@DATA_ROOT@/repos/DCM"
+repo_url = "https://github.com/Vchitect/DCM"
+commit = "c7039e8"
+model_url = "https://github.com/Tencent-Hunyuan/HunyuanVideo"
+dense_backend = "fa3"
+floor_backend = "fa2"
+
+[checkpoints]
+dcm_hy = "@DATA_ROOT@/checkpoints/DCM/DCM_HY"
+transformer = "@DATA_ROOT@/checkpoints/HunyuanVideo/transformer_diffusers"
+
+[sampler]
+steps = 50
+branches = ["cond"]
+embedded_guidance = 6.0
+frames = 129
+height = 720
+width = 1280
+compact_mask = true
+
+[attention]
+n_layers = 60
+n_heads = 24
+head_dim = 128
+latent_grid = [33, 45, 80]
+text_merge = "lse"
+
+[plan]
+layout = "rows"
+rows = [1, 4, 11, 22, 37]
+block_shape = [1, 8, 16]
+
+[data]
+clips = "@DATA_ROOT@/prompts/moviegenbench.json"
+splits = "data/splits/hy.json"
+work = "@DATA_ROOT@/work/hy"
+
+[eval]
+ssim = "uniform"
+
+[planner]
+stale_db = 2.8558559714183267
+dtable_clips = 2
+distortion_clips = 1
+sens_clips = 1
+stale_clips = 1
+
+[planner.sensitivity]
+kind = "injection"
+step_groups = [[1, 2], [3, 7], [8, 16], [17, 29], [30, 49]]
+
+[runtime]
+lse = true
+keep_plans = "row"
+lean = true
+lean_hmax = 8
+free_plans_at_end = true
+head_cap = 8
+dense_head_cap = 8
+head_chunk_gib = 1.5
+label_free = true
+
+[paper]
+block_shape = [1, 8, 16]
+psnr = 27.47
+speedup = 1.65

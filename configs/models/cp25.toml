@@ -1,0 +1,56 @@
+[model]
+key = "cp25"
+name = "Cosmos-Predict2.5-2B (distilled)"
+family = "video"
+repo = "@DATA_ROOT@/repos/cosmos-predict2.5"
+repo_url = "https://github.com/nvidia-cosmos/cosmos-predict2.5"
+commit = "a2c298b0"
+dense_backend = "fa3"
+floor_backend = "fi"
+
+[checkpoints]
+"nvidia/Cosmos-Predict2.5-2B" = "@DATA_ROOT@/checkpoints/Cosmos-Predict2.5-2B"
+"nvidia/Cosmos-Reason1-7B" = "@DATA_ROOT@/checkpoints/Cosmos-Reason1-7B"
+tokenizer = "@DATA_ROOT@/checkpoints/Cosmos-Predict2.5-2B/tokenizer.pth"
+
+[sampler]
+steps = 4
+branches = ["cond"]
+frames = 93
+height = 704
+width = 1280
+fps = 16
+
+[attention]
+n_layers = 28
+n_heads = 16
+head_dim = 128
+latent_grid = [24, 44, 80]
+
+[plan]
+layout = "steps"
+rows = [1, 2, 3]
+
+[data]
+clips = "@DATA_ROOT@/prompts/moviegenbench.json"
+splits = "data/splits/cp25.json"
+work = "@DATA_ROOT@/work/cp25"
+
+[eval]
+ssim = "uniform"
+
+[planner]
+stale_db = 3.00
+smax = 1.81
+
+[planner.sensitivity]
+kind = "injection"
+step_groups = [[1, 1], [2, 2], [3, 3]]
+
+[runtime]
+fast = true
+
+[paper]
+block_shape = [4, 4, 8]
+psnr = 24.70
+speedup = 1.48

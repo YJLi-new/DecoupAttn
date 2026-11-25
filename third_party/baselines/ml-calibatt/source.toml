@@ -1,0 +1,20 @@
+name = "ml-calibatt"
+url = "https://github.com/apple/ml-calibatt"
+commit = "837309db7ed0c1c119099fd774209238b536c883"
+dest = "ml-calibatt"
+license = "Apple sample code license (LICENSE of the repository, Copyright (C) 2026 Apple Inc.)"
+submodules = false
+patches = ["0001-local-model-paths.patch"]
+used_by = ["calibatt"]
+
+[[requires]]
+path = "third_party/LiteAttention"
+url = "https://github.com/moonmath-ai/LiteAttention"
+commit = "cfb4e64288aa4fcce801149ff4ef2e63e429abbb"
+license = "MIT (LiteAttention changes), BSD-3-Clause (FlashAttention code it builds on)"
+
+[[requires]]
+path = "third_party/flash-attention"
+url = "https://github.com/Dao-AILab/flash-attention"
+commit = "060c9188beec3a8b62b33a3bfa6d5d2d44975fab"
+license = "BSD-3-Clause"

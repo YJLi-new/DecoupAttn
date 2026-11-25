@@ -1,0 +1,468 @@
+{
+ "cp1": {
+  "Full": {
+   "psnr": 23.42,
+   "psnr_sd": 3.91,
+   "ms": 171006
+  },
+  "Tied": {
+   "dpsnr": -1.95,
+   "dpsnr_sd": 2.14,
+   "wins": 6,
+   "dms": -10326
+  },
+  "Tied_dagger": {
+   "dpsnr": -2.45,
+   "dpsnr_sd": 1.6,
+   "wins": 8,
+   "dms": -9592
+  },
+  "Centroid": {
+   "dpsnr": -1.6,
+   "dpsnr_sd": 1.64,
+   "wins": 8,
+   "dms": -2621
+  },
+  "U": {
+   "dpsnr": -1.93,
+   "dpsnr_sd": 2.97,
+   "wins": 7,
+   "dms": 1814
+  },
+  "D": {
+   "dpsnr": -0.34,
+   "dpsnr_sd": 2.21,
+   "wins": 5,
+   "dms": -1738
+  },
+  "Frozen": {
+   "dpsnr": -0.95,
+   "dpsnr_sd": 0.9,
+   "wins": 7,
+   "dms": -7484
+  }
+ },
+ "cp25": {
+  "Full": {
+   "psnr": 24.07,
+   "psnr_sd": 3.97,
+   "ms": 8212
+  },
+  "Tied": {
+   "dpsnr": -1.63,
+   "dpsnr_sd": 0.71,
+   "wins": 8,
+   "dms": -725
+  },
+  "Tied_dagger": {
+   "dpsnr": -1.9,
+   "dpsnr_sd": 0.84,
+   "wins": 8,
+   "dms": -707
+  },
+  "Centroid": {
+   "dpsnr": -1.03,
+   "dpsnr_sd": 0.67,
+   "wins": 7,
+   "dms": -95
+  },
+  "U": {
+   "dpsnr": -2.3,
+   "dpsnr_sd": 0.94,
+   "wins": 8,
+   "dms": 71
+  },
+  "D": {
+   "dpsnr": -0.96,
+   "dpsnr_sd": 0.39,
+   "wins": 8,
+   "dms": 21
+  },
+  "Frozen": {
+   "dpsnr": -0.38,
+   "dpsnr_sd": 0.18,
+   "wins": 8,
+   "dms": -150
+  }
+ },
+ "wan21": {
+  "Full": {
+   "psnr": 25.31,
+   "psnr_sd": 2.8,
+   "ms": 12940
+  },
+  "Tied": {
+   "dpsnr": -3.72,
+   "dpsnr_sd": 0.75,
+   "wins": 8,
+   "dms": -1181
+  },
+  "Tied_dagger": {
+   "dpsnr": -4.19,
+   "dpsnr_sd": 1.04,
+   "wins": 8,
+   "dms": -1119
+  },
+  "Centroid": {
+   "dpsnr": -1.24,
+   "dpsnr_sd": 0.5,
+   "wins": 8,
+   "dms": -176
+  },
+  "U": {
+   "dpsnr": -2.14,
+   "dpsnr_sd": 0.79,
+   "wins": 8,
+   "dms": 38
+  },
+  "D": {
+   "dpsnr": -1.65,
+   "dpsnr_sd": 0.41,
+   "wins": 8,
+   "dms": 19
+  },
+  "Frozen": {
+   "dpsnr": -1.14,
+   "dpsnr_sd": 0.31,
+   "wins": 8,
+   "dms": -218
+  }
+ },
+ "wan22": {
+  "Full": {
+   "psnr": 17.21,
+   "psnr_sd": 2.87,
+   "ms": 12820
+  },
+  "Tied": {
+   "dpsnr": -1.48,
+   "dpsnr_sd": 0.53,
+   "wins": 8,
+   "dms": -1147
+  },
+  "Tied_dagger": {
+   "dpsnr": -1.66,
+   "dpsnr_sd": 0.36,
+   "wins": 8,
+   "dms": -1146
+  },
+  "Centroid": {
+   "dpsnr": -0.53,
+   "dpsnr_sd": 0.24,
+   "wins": 8,
+   "dms": -148
+  },
+  "U": {
+   "dpsnr": -1.06,
+   "dpsnr_sd": 0.56,
+   "wins": 8,
+   "dms": -10
+  },
+  "D": {
+   "dpsnr": -0.65,
+   "dpsnr_sd": 0.51,
+   "wins": 8,
+   "dms": 24
+  },
+  "Frozen": {
+   "dpsnr": -0.36,
+   "dpsnr_sd": 0.18,
+   "wins": 8,
+   "dms": -255
+  }
+ },
+ "hy": {
+  "Full": {
+   "psnr": 25.84,
+   "psnr_sd": 4.57,
+   "ms": 654610
+  },
+  "Tied": {
+   "dpsnr": -1.61,
+   "dpsnr_sd": 1.53,
+   "wins": 6,
+   "dms": -27949
+  },
+  "Tied_dagger": {
+   "dpsnr": -0.85,
+   "dpsnr_sd": 1.05,
+   "wins": 7,
+   "dms": -29257
+  },
+  "Centroid": {
+   "dpsnr": -1.06,
+   "dpsnr_sd": 1.31,
+   "wins": 7,
+   "dms": -23626
+  },
+  "U": {
+   "dpsnr": -4.1,
+   "dpsnr_sd": 2.43,
+   "wins": 8,
+   "dms": 13275
+  },
+  "D": {
+   "dpsnr": -0.87,
+   "dpsnr_sd": 0.81,
+   "wins": 8,
+   "dms": 2311
+  },
+  "Frozen": {
+   "dpsnr": -0.38,
+   "dpsnr_sd": 0.68,
+   "wins": 6,
+   "dms": -26463
+  }
+ },
+ "nano": {
+  "Full": {
+   "psnr": 20.92,
+   "psnr_sd": 2.94,
+   "ms": 188278
+  },
+  "Tied": {
+   "dpsnr": -1.71,
+   "dpsnr_sd": 2.28,
+   "wins": 7,
+   "dms": -10911
+  },
+  "Tied_dagger": {
+   "dpsnr": -2.17,
+   "dpsnr_sd": 1.73,
+   "wins": 8,
+   "dms": -10610
+  },
+  "Centroid": {
+   "dpsnr": -0.6,
+   "dpsnr_sd": 1.93,
+   "wins": 7,
+   "dms": -6768
+  },
+  "U": {
+   "dpsnr": -2.05,
+   "dpsnr_sd": 1.22,
+   "wins": 8,
+   "dms": 1473
+  },
+  "D": {
+   "dpsnr": -1.06,
+   "dpsnr_sd": 2.25,
+   "wins": 7,
+   "dms": -171
+  },
+  "Frozen": {
+   "dpsnr": -0.12,
+   "dpsnr_sd": 1.37,
+   "wins": 5,
+   "dms": -8050
+  }
+ },
+ "t25": {
+  "Full": {
+   "psnr": 33.34,
+   "psnr_sd": 2.01,
+   "ms": 9620
+  },
+  "Tied": {
+   "dpsnr": -2.21,
+   "dpsnr_sd": 0.78,
+   "wins": 8,
+   "dms": -804
+  },
+  "Tied_dagger": {
+   "dpsnr": -2.67,
+   "dpsnr_sd": 0.9,
+   "wins": 8,
+   "dms": -802
+  },
+  "Centroid": {
+   "dpsnr": -1.2,
+   "dpsnr_sd": 0.62,
+   "wins": 8,
+   "dms": -75
+  },
+  "U": {
+   "dpsnr": -0.55,
+   "dpsnr_sd": 0.51,
+   "wins": 6,
+   "dms": 51
+  },
+  "D": {
+   "dpsnr": -1.31,
+   "dpsnr_sd": 0.68,
+   "wins": 8,
+   "dms": 3
+  },
+  "Frozen": {
+   "dpsnr": -0.69,
+   "dpsnr_sd": 0.65,
+   "wins": 8,
+   "dms": -167
+  }
+ },
+ "dr": {
+  "Full": {
+   "psnr": 50.2,
+   "psnr_sd": 1.44,
+   "ms": 3905
+  },
+  "Tied": {
+   "dpsnr": -2.75,
+   "dpsnr_sd": 0.64,
+   "wins": 8,
+   "dms": -396
+  },
+  "Tied_dagger": {
+   "dpsnr": -5.29,
+   "dpsnr_sd": 2.58,
+   "wins": 8,
+   "dms": -423
+  },
+  "Centroid": {
+   "dpsnr": -2.48,
+   "dpsnr_sd": 0.86,
+   "wins": 8,
+   "dms": 121
+  },
+  "U": {
+   "dpsnr": -0.77,
+   "dpsnr_sd": 0.47,
+   "wins": 7,
+   "dms": -15
+  },
+  "D": {
+   "dpsnr": -1.71,
+   "dpsnr_sd": 0.91,
+   "wins": 8,
+   "dms": -6
+  }
+ },
+ "alaya": {
+  "Full": {
+   "psnr": 27.97,
+   "psnr_sd": 2.81,
+   "ms": 46057
+  },
+  "Tied": {
+   "dpsnr": -4.07,
+   "dpsnr_sd": 1.51,
+   "wins": 8,
+   "dms": -3673
+  },
+  "Tied_dagger": {
+   "dpsnr": -5.43,
+   "dpsnr_sd": 1.81,
+   "wins": 8,
+   "dms": -3482
+  },
+  "Centroid": {
+   "dpsnr": -1.43,
+   "dpsnr_sd": 0.9,
+   "wins": 7,
+   "dms": -1154
+  },
+  "U": {
+   "dpsnr": -1.06,
+   "dpsnr_sd": 1.37,
+   "wins": 7,
+   "dms": -129
+  },
+  "D": {
+   "dpsnr": -0.86,
+   "dpsnr_sd": 0.95,
+   "wins": 6,
+   "dms": 37
+  },
+  "Frozen": {
+   "dpsnr": -2.59,
+   "dpsnr_sd": 1.07,
+   "wins": 8,
+   "dms": -2850
+  }
+ },
+ "unirelight": {
+  "Full": {
+   "psnr": 41.54,
+   "psnr_sd": 4.39,
+   "ms": 108377
+  },
+  "Tied": {
+   "dpsnr": -7.39,
+   "dpsnr_sd": 3.89,
+   "wins": 8,
+   "dms": -6113
+  },
+  "Tied_dagger": {
+   "dpsnr": -8.59,
+   "dpsnr_sd": 4.42,
+   "wins": 8,
+   "dms": -6308
+  },
+  "Centroid": {
+   "dpsnr": -3.77,
+   "dpsnr_sd": 1.79,
+   "wins": 8,
+   "dms": -1885
+  },
+  "U": {
+   "dpsnr": -0.85,
+   "dpsnr_sd": 3.89,
+   "wins": 3,
+   "dms": 1367
+  },
+  "D": {
+   "dpsnr": -2.41,
+   "dpsnr_sd": 0.69,
+   "wins": 8,
+   "dms": 284
+  },
+  "Frozen": {
+   "dpsnr": -4.45,
+   "dpsnr_sd": 2.09,
+   "wins": 8,
+   "dms": -4780
+  }
+ },
+ "average": {
+  "Full": {
+   "psnr": 28.98,
+   "ms": 121583
+  },
+  "Tied": {
+   "dpsnr": -2.85,
+   "dms": -6323,
+   "supp": 10,
+   "of": 10
+  },
+  "Tied_dagger": {
+   "dpsnr": -3.52,
+   "dms": -6345,
+   "supp": 10,
+   "of": 10
+  },
+  "Centroid": {
+   "dpsnr": -1.49,
+   "dms": -3643,
+   "supp": 10,
+   "of": 10
+  },
+  "U": {
+   "dpsnr": -1.68,
+   "dms": 1794,
+   "supp": 9,
+   "of": 10
+  },
+  "D": {
+   "dpsnr": -1.18,
+   "dms": 78,
+   "supp": 9,
+   "of": 10
+  },
+  "Frozen": {
+   "dpsnr": -1.23,
+   "dms": -5602,
+   "supp": 8,
+   "of": 9
+  }
+ }
+}

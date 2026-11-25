@@ -1,0 +1,63 @@
+[model]
+key = "nano"
+name = "Cosmos3-Nano (image-to-world, 720p)"
+family = "video"
+repo_url = "https://huggingface.co/nvidia/Cosmos3-Nano"
+dense_backend = "fa3"
+floor_backend = "fi"
+
+[checkpoints]
+model = "@DATA_ROOT@/checkpoints/Cosmos3-Nano"
+
+[sampler]
+steps = 35
+branches = ["cond", "uncond"]
+guidance = 6.0
+flow_shift = 10.0
+frames = 189
+height = 720
+width = 1280
+fps = 24
+cond_height = 480
+cond_width = 832
+
+[attention]
+n_layers = 36
+n_heads = 32
+head_dim = 128
+latent_grid = [48, 23, 40]
+text_merge = "lse"
+
+[plan]
+layout = "rows"
+rows = [1, 2, 4, 7, 11, 15, 20, 26, 32]
+
+[data]
+clips = "@DATA_ROOT@/prompts/moviegenbench.json"
+splits = "data/splits/nano.json"
+work = "@DATA_ROOT@/work/nano"
+
+[eval]
+ssim = "uniform"
+
+[planner]
+stale_db = 2.856379286314566
+stale_steps = [1, 3, 7, 13, 21, 30]
+dtable_clips = 4
+distortion_clips = 4
+stale_clips = 2
+block_shape_clips = 4
+
+[planner.sensitivity]
+kind = "injection"
+step_groups = [[1, 9], [10, 17], [18, 29], [30, 34]]
+
+[runtime]
+lse = true
+mixed = "overwrite"
+cluster_all_layers = true
+
+[paper]
+block_shape = [4, 4, 8]
+psnr = 21.56
+speedup = 1.21

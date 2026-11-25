@@ -1,0 +1,195 @@
+{
+ "model": "dr",
+ "seed": 1000,
+ "split": "val",
+ "variants": {
+  "Full": {
+   "clips": {
+    "syn_train_0015": {
+     "psnr": 51.44987
+    },
+    "syn_train_0017": {
+     "psnr": 52.14166
+    },
+    "syn_train_0035": {
+     "psnr": 51.78714
+    },
+    "syn_train_0114": {
+     "psnr": 49.51646
+    },
+    "syn_train_0141": {
+     "psnr": 47.93554
+    },
+    "syn_train_0193": {
+     "psnr": 49.55387
+    },
+    "syn_train_0293": {
+     "psnr": 49.82917
+    },
+    "syn_train_0429": {
+     "psnr": 49.4159
+    }
+   }
+  },
+  "Tied": {
+   "clips": {
+    "syn_train_0015": {
+     "psnr": 48.16675
+    },
+    "syn_train_0017": {
+     "psnr": 49.02056
+    },
+    "syn_train_0035": {
+     "psnr": 49.26388
+    },
+    "syn_train_0114": {
+     "psnr": 45.83352
+    },
+    "syn_train_0141": {
+     "psnr": 45.47584
+    },
+    "syn_train_0193": {
+     "psnr": 47.23268
+    },
+    "syn_train_0293": {
+     "psnr": 48.18347
+    },
+    "syn_train_0429": {
+     "psnr": 46.48597
+    }
+   }
+  },
+  "Tied_dagger": {
+   "clips": {
+    "syn_train_0015": {
+     "psnr": 46.36594
+    },
+    "syn_train_0017": {
+     "psnr": 41.98821
+    },
+    "syn_train_0035": {
+     "psnr": 44.7612
+    },
+    "syn_train_0114": {
+     "psnr": 42.70319
+    },
+    "syn_train_0141": {
+     "psnr": 43.94371
+    },
+    "syn_train_0193": {
+     "psnr": 46.89278
+    },
+    "syn_train_0293": {
+     "psnr": 47.25735
+    },
+    "syn_train_0429": {
+     "psnr": 45.40343
+    }
+   }
+  },
+  "Centroid": {
+   "clips": {
+    "syn_train_0015": {
+     "psnr": 49.20864
+    },
+    "syn_train_0017": {
+     "psnr": 49.32023
+    },
+    "syn_train_0035": {
+     "psnr": 50.09211
+    },
+    "syn_train_0114": {
+     "psnr": 47.1748
+    },
+    "syn_train_0141": {
+     "psnr": 45.60116
+    },
+    "syn_train_0193": {
+     "psnr": 47.75584
+    },
+    "syn_train_0293": {
+     "psnr": 47.61406
+    },
+    "syn_train_0429": {
+     "psnr": 44.99327
+    }
+   }
+  },
+  "U": {
+   "clips": {
+    "syn_train_0015": {
+     "psnr": 50.242
+    },
+    "syn_train_0017": {
+     "psnr": 51.80419
+    },
+    "syn_train_0035": {
+     "psnr": 51.80129
+    },
+    "syn_train_0114": {
+     "psnr": 49.06481
+    },
+    "syn_train_0141": {
+     "psnr": 46.62593
+    },
+    "syn_train_0193": {
+     "psnr": 48.53324
+    },
+    "syn_train_0293": {
+     "psnr": 49.02179
+    },
+    "syn_train_0429": {
+     "psnr": 48.37758
+    }
+   }
+  },
+  "D": {
+   "clips": {
+    "syn_train_0015": {
+     "psnr": 50.78019
+    },
+    "syn_train_0017": {
+     "psnr": 51.3819
+    },
+    "syn_train_0035": {
+     "psnr": 50.70921
+    },
+    "syn_train_0114": {
+     "psnr": 46.92886
+    },
+    "syn_train_0141": {
+     "psnr": 44.85132
+    },
+    "syn_train_0193": {
+     "psnr": 47.17521
+    },
+    "syn_train_0293": {
+     "psnr": 47.94399
+    },
+    "syn_train_0429": {
+     "psnr": 48.1872
+    }
+   }
+  }
+ },
+ "timing": {
+  "Full": {
+   "method_ms": 3905.00375
+  },
+  "Tied": {
+   "method_ms": 3508.6524
+  },
+  "Tied_dagger": {
+   "method_ms": 3481.58708
+  },
+  "Centroid": {
+   "method_ms": 4025.87489
+  },
+  "U": {
+   "method_ms": 3889.73115
+  },
+  "D": {
+   "method_ms": 3899.23253
+  }
+ }
+}

@@ -1,0 +1,66 @@
+[default]
+epsilon = "distilled4"
+dense_first = true
+calib_clips = 16
+cfg_energy = "last"
+repetitive_threshold = 0.87
+anchor_rows = 5
+repeat_anchor_strategy = "average"
+agreement_threshold = 0.5
+trim_percentile = 99.95
+target_density = 0.20
+density_tol = 0.002
+c_grid = [0.10, 4.00, 0.10]
+workers = 8
+
+[cp1]
+epsilon = "wan50"
+
+[cp25]
+dense_first = false
+calib_clips = 8
+
+[wan21]
+pipeline = "official"
+dense_first = false
+epsilon_shift = 0.1350
+attn_mode = "flash_attn3"
+model_dir = "checkpoints/Wan2.1-T2V-14B"
+shift_range = [0.0, 0.40]
+shift_iters = 5
+calib_lines = [
+    2, 9, 22, 26, 29, 31, 64, 96, 104, 120, 137, 214, 221, 224, 227, 234, 236, 238, 261, 272, 296, 325, 353, 388, 399,
+    426, 432, 443, 448, 456, 460, 470, 483, 499, 507, 540, 554, 566, 582, 605, 622, 665, 667, 693, 702, 712, 738, 743,
+    779, 780, 782, 785, 807, 821, 855, 867, 902, 914, 923, 938, 948, 961, 975, 992,
+]
+
+[wan22]
+dense_first = false
+calib_clips = 8
+
+[hy]
+epsilon = "wan50_720p"
+max_text_tokens = 256
+calib_clips = 4
+cache_device = "cpu"
+energy_device = "cpu"
+skip_lists_device = "cpu"
+
+[nano]
+epsilon = "wan50_720p"
+dense_first = false
+calib_clips = 8
+cfg_energy = "mean"
+energy_device = "cpu"
+
+[t25]
+
+[dr]
+dense_first = false
+calib_clips = 0
+
+[alaya]
+epsilon = "wan50"
+
+[unirelight]
+epsilon = "wan50"

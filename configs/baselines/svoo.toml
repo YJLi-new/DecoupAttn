@@ -1,0 +1,90 @@
+[default]
+qc = 256
+kc = 1024
+iters = 2
+min_kc_ratio = 0.10
+reuse_interval = 1000
+dense_steps = 1
+dense_layers = 1
+per_branch = false
+official = "wan"
+threshold = 0.95
+query_samples = 4096
+profile_clips = 2
+match_clips = 2
+target_density = 0.20
+match_tol = 0.004
+match_iters = 7
+
+[cp1]
+top_p = 0.30
+kr_min = 0.1078
+kr_max = 0.1438
+
+[cp25]
+top_p = 0.30
+kr_min = 0.1289
+kr_max = 0.1719
+query_samples = 0
+reuse_interval = 40
+match_tol = 0.0015
+match_iters = 8
+
+[wan21]
+top_p = 0.30
+kr_min = 0.0797
+kr_max = 0.1063
+query_samples = 0
+reuse_interval = 40
+match_tol = 0.0015
+match_iters = 8
+
+[wan22]
+top_p = 0.30
+kr_min = 0.0832
+kr_max = 0.1109
+query_samples = 0
+reuse_interval = 40
+match_tol = 0.0015
+match_iters = 8
+
+[hy]
+official = "hunyuan"
+top_p = 0.735
+kr_min = 0.05
+kr_max = 0.10
+reuse_interval = 50
+profile_clips = 1
+match_clips = 1
+
+[nano]
+top_p = 0.30
+kr_min = 0.0850
+kr_max = 0.1133
+query_samples = 0
+reuse_interval = 40
+per_branch = true
+match_tol = 0.0015
+match_iters = 8
+
+[t25]
+top_p = 0.30
+kr_min = 0.1289
+kr_max = 0.1719
+
+[dr]
+top_p = 0.2545
+kr_min = 0.075
+kr_max = 0.10
+min_kc_ratio = 0.05
+reuse_interval = 40
+
+[alaya]
+top_p = 0.30
+kr_min = 0.1008
+kr_max = 0.1344
+
+[unirelight]
+top_p = 0.30
+kr_min = 0.0938
+kr_max = 0.1250

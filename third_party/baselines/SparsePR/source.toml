@@ -1,0 +1,8 @@
+name = "SparsePR"
+url = "https://github.com/PardisTaghavi/SparsePR"
+commit = "e46646f4c440ca2bb57df9e8738f8368c6a3dabf"
+dest = "SparsePR"
+license = "Apache-2.0"
+submodules = false
+patches = []
+used_by = ["sparsepr"]

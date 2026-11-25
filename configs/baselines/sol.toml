@@ -1,0 +1,68 @@
+[default]
+thresh_type = "diag"
+kernel = "cute"
+morton = "call"
+account = true
+text_sink = false
+rematch = false
+match_scheme = "interp"
+match_clips = 2
+match_iters = 6
+match_range = [0.3, 3.0]
+match_start = 1.37
+match_band = [0.195, 0.205]
+
+[cp1]
+tau = 1.0684
+
+[cp25]
+tau = 1.0031
+match_scheme = "bisect"
+match_range = [0.3, 1.5]
+match_iters = 9
+match_band = [0.1985, 0.2015]
+
+[wan21]
+tau = 1.3687
+morton = "model"
+match_scheme = "bisect"
+match_range = [0.3, 1.5]
+match_iters = 9
+match_band = [0.1985, 0.2015]
+
+[wan22]
+tau = 1.3313
+morton = "model"
+match_scheme = "bisect"
+match_range = [0.3, 1.5]
+match_iters = 9
+match_band = [0.1985, 0.2015]
+
+[hy]
+tau = 1.0974
+morton = "none"
+rematch = true
+match_clips = 1
+match_iters = 4
+match_start = 1.15
+
+[nano]
+tau = 1.1625
+text_sink = true
+match_scheme = "bisect"
+match_range = [0.3, 1.5]
+match_iters = 9
+match_band = [0.1985, 0.2015]
+
+[t25]
+tau = 1.0156
+
+[dr]
+tau = 1.1552
+
+[alaya]
+tau = 1.3394
+match_clips = 8
+
+[unirelight]
+tau = 1.2957

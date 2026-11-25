@@ -1,0 +1,8 @@
+name = "piecewise-sparse-attention"
+url = "https://github.com/xie-lab-ml/piecewise-sparse-attention"
+commit = "655648df86cafd75042dc32d6b6be78c4ea0eca8"
+dest = "piecewise-sparse-attention"
+license = "MIT"
+submodules = false
+patches = ["0001-return-lse.patch"]
+used_by = ["pisa"]

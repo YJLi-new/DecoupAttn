@@ -1,0 +1,8 @@
+name = "Sana"
+url = "https://github.com/NVlabs/Sana"
+commit = "670482d8a857d578ac8a2ea89b052d0fb47badba"
+dest = "Sana"
+license = "Apache-2.0"
+submodules = false
+patches = []
+used_by = ["sol"]

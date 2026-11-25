@@ -1,0 +1,226 @@
+{
+ "model": "alaya",
+ "seed": 1000,
+ "split": "val",
+ "variants": {
+  "Full": {
+   "clips": {
+    "syn_train_0015": {
+     "psnr": 29.13616
+    },
+    "syn_train_0017": {
+     "psnr": 26.43641
+    },
+    "syn_train_0035": {
+     "psnr": 24.55624
+    },
+    "syn_train_0114": {
+     "psnr": 25.03898
+    },
+    "syn_train_0141": {
+     "psnr": 26.74756
+    },
+    "syn_train_0193": {
+     "psnr": 31.9853
+    },
+    "syn_train_0293": {
+     "psnr": 28.22767
+    },
+    "syn_train_0429": {
+     "psnr": 31.63557
+    }
+   }
+  },
+  "Tied": {
+   "clips": {
+    "syn_train_0015": {
+     "psnr": 25.61778
+    },
+    "syn_train_0017": {
+     "psnr": 24.36181
+    },
+    "syn_train_0035": {
+     "psnr": 21.20669
+    },
+    "syn_train_0114": {
+     "psnr": 20.23981
+    },
+    "syn_train_0141": {
+     "psnr": 20.95308
+    },
+    "syn_train_0193": {
+     "psnr": 29.61978
+    },
+    "syn_train_0293": {
+     "psnr": 22.0399
+    },
+    "syn_train_0429": {
+     "psnr": 27.15974
+    }
+   }
+  },
+  "Tied_dagger": {
+   "clips": {
+    "syn_train_0015": {
+     "psnr": 20.45054
+    },
+    "syn_train_0017": {
+     "psnr": 23.00446
+    },
+    "syn_train_0035": {
+     "psnr": 20.81477
+    },
+    "syn_train_0114": {
+     "psnr": 20.88423
+    },
+    "syn_train_0141": {
+     "psnr": 20.48883
+    },
+    "syn_train_0193": {
+     "psnr": 27.28417
+    },
+    "syn_train_0293": {
+     "psnr": 21.20955
+    },
+    "syn_train_0429": {
+     "psnr": 26.1914
+    }
+   }
+  },
+  "Centroid": {
+   "clips": {
+    "syn_train_0015": {
+     "psnr": 26.92826
+    },
+    "syn_train_0017": {
+     "psnr": 25.37559
+    },
+    "syn_train_0035": {
+     "psnr": 23.31627
+    },
+    "syn_train_0114": {
+     "psnr": 25.06965
+    },
+    "syn_train_0141": {
+     "psnr": 23.89928
+    },
+    "syn_train_0193": {
+     "psnr": 30.11184
+    },
+    "syn_train_0293": {
+     "psnr": 27.53734
+    },
+    "syn_train_0429": {
+     "psnr": 30.05487
+    }
+   }
+  },
+  "U": {
+   "clips": {
+    "syn_train_0015": {
+     "psnr": 26.32732
+    },
+    "syn_train_0017": {
+     "psnr": 27.29478
+    },
+    "syn_train_0035": {
+     "psnr": 24.3128
+    },
+    "syn_train_0114": {
+     "psnr": 23.9377
+    },
+    "syn_train_0141": {
+     "psnr": 26.59625
+    },
+    "syn_train_0193": {
+     "psnr": 31.36781
+    },
+    "syn_train_0293": {
+     "psnr": 27.06697
+    },
+    "syn_train_0429": {
+     "psnr": 28.41447
+    }
+   }
+  },
+  "D": {
+   "clips": {
+    "syn_train_0015": {
+     "psnr": 28.00078
+    },
+    "syn_train_0017": {
+     "psnr": 26.93091
+    },
+    "syn_train_0035": {
+     "psnr": 22.77336
+    },
+    "syn_train_0114": {
+     "psnr": 25.54917
+    },
+    "syn_train_0141": {
+     "psnr": 25.86253
+    },
+    "syn_train_0193": {
+     "psnr": 30.41757
+    },
+    "syn_train_0293": {
+     "psnr": 27.66538
+    },
+    "syn_train_0429": {
+     "psnr": 29.70807
+    }
+   }
+  },
+  "Frozen": {
+   "clips": {
+    "syn_train_0015": {
+     "psnr": 26.77724
+    },
+    "syn_train_0017": {
+     "psnr": 23.8753
+    },
+    "syn_train_0035": {
+     "psnr": 23.23042
+    },
+    "syn_train_0114": {
+     "psnr": 21.98188
+    },
+    "syn_train_0141": {
+     "psnr": 22.01538
+    },
+    "syn_train_0193": {
+     "psnr": 29.45441
+    },
+    "syn_train_0293": {
+     "psnr": 26.85336
+    },
+    "syn_train_0429": {
+     "psnr": 28.86602
+    }
+   }
+  }
+ },
+ "timing": {
+  "Full": {
+   "method_ms": 46056.6211
+  },
+  "Tied": {
+   "method_ms": 42383.793
+  },
+  "Tied_dagger": {
+   "method_ms": 42574.6562
+  },
+  "Centroid": {
+   "method_ms": 44902.3789
+  },
+  "U": {
+   "method_ms": 45927.2109
+  },
+  "D": {
+   "method_ms": 46093.8945
+  },
+  "Frozen": {
+   "method_ms": 43207.0391
+  }
+ }
+}

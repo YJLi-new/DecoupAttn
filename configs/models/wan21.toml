@@ -1,0 +1,53 @@
+[model]
+key = "wan21"
+name = "Wan2.1-T2V-14B (LightX2V 4-step, 480p)"
+family = "video"
+repo_url = "https://github.com/Wan-Video/Wan2.1"
+dense_backend = "fa3"
+floor_backend = "cudnn"
+
+[checkpoints]
+diffusers = "@DATA_ROOT@/checkpoints/Wan2.1-T2V-14B-Diffusers"
+lightx2v = "@DATA_ROOT@/checkpoints/Wan2.1-Distill-Models/wan2.1_t2v_14b_lightx2v_4step.safetensors"
+
+[sampler]
+steps = 4
+branches = ["cond"]
+frames = 81
+height = 480
+width = 832
+
+[attention]
+n_layers = 40
+n_heads = 40
+head_dim = 128
+latent_grid = [21, 30, 52]
+
+[plan]
+layout = "steps"
+rows = [1, 2, 3]
+block_shape = [4, 4, 8]
+
+[data]
+clips = "@DATA_ROOT@/prompts/moviegenbench.json"
+splits = "data/splits/wan21.json"
+work = "@DATA_ROOT@/work/wan21"
+
+[eval]
+ssim = "uniform"
+
+[planner]
+stale_db = 2.73
+smax = 1.13
+
+[planner.sensitivity]
+kind = "injection"
+step_groups = [[1, 1], [2, 2], [3, 3]]
+
+[runtime]
+fast = true
+
+[paper]
+block_shape = [4, 4, 8]
+psnr = 24.70
+speedup = 1.06

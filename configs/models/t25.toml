@@ -1,0 +1,51 @@
+[model]
+key = "t25"
+name = "Cosmos-Transfer2.5-2B (distilled, edge)"
+family = "controlled"
+repo = "@DATA_ROOT@/repos/cosmos-transfer2.5"
+repo_url = "https://github.com/nvidia-cosmos/cosmos-transfer2.5"
+commit = "2ff49d0"
+dense_backend = "fa3"
+floor_backend = "fi"
+
+[checkpoints]
+transfer = "@DATA_ROOT@/checkpoints/Cosmos-Transfer2.5-2B"
+predict = "@DATA_ROOT@/checkpoints/Cosmos-Predict2.5-2B"
+reason = "@DATA_ROOT@/checkpoints/Cosmos-Reason1-7B"
+
+[sampler]
+steps = 4
+branches = ["cond"]
+frames = 93
+height = 704
+width = 1280
+input_fps = 16
+
+[attention]
+n_layers = 32
+n_heads = 16
+head_dim = 128
+latent_grid = [24, 44, 80]
+
+[plan]
+layout = "steps"
+rows = [1, 2, 3]
+
+[data]
+clips = "@DATA_ROOT@/clips"
+splits = "data/splits/t25.json"
+work = "@DATA_ROOT@/work/t25"
+
+[eval]
+ssim = "gaussian"
+
+[planner]
+stale_db = 2.13
+smax = 1.56
+
+[planner.sensitivity]
+kind = "injection"
+step_groups = [[1, 1], [2, 2], [3, 3]]
+
+[runtime]
+fast = true

@@ -1,7 +1,11 @@
-# DecoupAttn
+<h1 align="center">DecoupAttn</h1>
 
-[![Paper](https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2611.05917v1)
-[![Plans](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Plans-yellow)](https://huggingface.co/datasets/LLKLL/DecoupAttn-plans)
+<h3 align="center">Decoupled Sparse Attention for Training-Free Acceleration of Video Diffusion</h3>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2611.05917v1"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&logoColor=white" alt="Paper"></a>
+  <a href="https://huggingface.co/datasets/LLKLL/DecoupAttn-plans"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Plans-yellow" alt="Plans"></a>
+</p>
 
 ## Installation
 

@@ -1,0 +1,60 @@
+# DecoupAttn
+
+## Installation
+
+Linux, NVIDIA Hopper GPU, Python 3.10+, PyTorch 2.5+ with CUDA, Triton 3.1+, FlashInfer 0.2.10,
+FlashAttention-3 (`flash_attn_interface`), `ffmpeg`.
+
+```bash
+pip install -e ".[kernels,eval,models]"
+```
+
+## Downloads
+
+```bash
+export DECOUPATTN_DATA_ROOT=/path/to/data
+python scripts/fetch_models.py --model cp25      # or --model all
+python scripts/fetch_baselines.py
+python scripts/build_prompts.py
+python scripts/convert_hunyuan_transformer.py    # once, for hy
+```
+
+- Models: `cp1`, `cp25`, `wan21`, `wan22`, `hy`, `nano`, `t25`, `dr`, `alaya`, `unirelight`. Gated Cosmos checkpoints
+  need their license accepted on the model page and `hf auth login`.
+- Each model runs in the environment of its official code (Wan2.1 / Wan2.2: Diffusers 0.34; Cosmos3-Nano: Diffusers 0.41).
+- `cp1`, `t25`, `dr`, `alaya` and `unirelight` read their clips from `clips/<clip>/` under the data root; the clips are
+  not included.
+- The plan files exceed the upload size limit, so they are not included; `calibrate` builds them.
+
+## Run
+
+```bash
+python -m decoupattn calibrate --model cp25 --run-dir runs/cp25            # writes runs/cp25/plan.npz
+python -m decoupattn generate  --model cp25 --run-dir runs/cp25 --dense    # dense reference
+python -m decoupattn generate  --model cp25 --run-dir runs/cp25
+python -m decoupattn evaluate  --model cp25 --run-dir runs/cp25
+python -m decoupattn time      --model cp25 --run-dir runs/cp25
+```
+
+`python -m decoupattn <command> --help` lists the options.
+
+## Tables
+
+```bash
+bash scripts/table1.sh cp25 runs     # after calibrate; "all" for every model
+bash scripts/table2.sh cp25 runs
+python -m decoupattn table1 --model all --from-reference --check    # from data/table1/reference, no GPU
+python -m decoupattn table2 --model all --from-reference --check
+```
+
+`scripts/table1.sh` runs each baseline with the interpreter in its variable (default `python`):
+
+| Baseline | Environment | Variable |
+| --- | --- | --- |
+| CalibAtt | the `setup.sh` of ml-calibatt | `PY_CALIBATT` |
+| SVOO | FlashInfer 0.6.11 | `PY_SVOO` |
+| SVG2, SVG-EAR | FlashInfer 0.2.10 | `PY_SVG` |
+| Sol-Attn, PISA | Triton ≥ 3.6; `TORCHDYNAMO_DISABLE=1` on the Cosmos models | `PY_SOLPISA` |
+| SparsePR | FlashInfer 0.6.2 | `PY_SPARSEPR` |
+
+Each environment also needs this package (`pip install -e ".[eval]"`) and the model's official code.

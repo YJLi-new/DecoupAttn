@@ -7,6 +7,10 @@
   <a href="https://huggingface.co/datasets/LLKLL/DecoupAttn-plans"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Plans-yellow" alt="Plans"></a>
 </p>
 
+<p align="center">
+  <img src="assets/method.png" width="100%" alt="How DecoupAttn computes one attention call">
+</p>
+
 ## Installation
 
 Linux, NVIDIA Hopper GPU, Python 3.10+, PyTorch 2.5+ with CUDA, Triton 3.1+, FlashInfer 0.2.10,

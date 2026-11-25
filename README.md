@@ -1,5 +1,8 @@
 # DecoupAttn
 
+[![Paper](https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2611.05917v1)
+[![Plans](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Plans-yellow)](https://huggingface.co/datasets/LLKLL/DecoupAttn-plans)
+
 ## Installation
 
 Linux, NVIDIA Hopper GPU, Python 3.10+, PyTorch 2.5+ with CUDA, Triton 3.1+, FlashInfer 0.2.10,

@@ -27,7 +27,8 @@ python scripts/convert_hunyuan_transformer.py    # once, for hy
 - Each model runs in the environment of its official code (Wan2.1 / Wan2.2: Diffusers 0.34; Cosmos3-Nano: Diffusers 0.41).
 - `cp1`, `t25`, `dr`, `alaya` and `unirelight` read their clips from `clips/<clip>/` under the data root; the clips are
   not included.
-- The plan files exceed the upload size limit, so they are not included; `calibrate` builds them.
+- Precomputed plan files are on [Hugging Face](https://huggingface.co/datasets/LLKLL/DecoupAttn-plans); `calibrate`
+  can also build them.
 
 ## Run
 

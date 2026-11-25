@@ -11,6 +11,21 @@
   <img src="assets/method.png" width="100%" alt="How DecoupAttn computes one attention call">
 </p>
 
+## Overview
+
+Sparse attention accelerates video diffusion transformers by computing a few attention blocks exactly and compensating
+for the rest. However, existing sparse attention still faces key challenges, including *identification overhead* from
+finding critical blocks at every denoising step, *suboptimal budget allocation* that sets sparsity budgets uniformly or
+by local metrics, and *cross-step error accumulation* as reused masks or clusters go stale. Observing that the errors
+left on skipped blocks partially cancel each other once every key is compensated, we propose DecoupAttn, a new paradigm
+of decoupled sparse attention: semantic clusters compensate every key, and exact attention corrects their error on a few
+blocks fixed once offline by position. To support this paradigm, we introduce Distortion Budget, a rate–distortion
+objective for budget allocation that places exact computation across denoising steps, layers, and heads where it removes
+the most distortion that compensation leaves in the final latent. Built on this budget, we further propose Reassign
+Cache, in which each step reassigns the drifting keys to cached centroids and refreshes compensation while the budgeted
+blocks stay fixed. Moreover, DecoupAttn is training-free: a few calibration clips compile one plan offline, and
+inference runs standard block-sparse kernels with one fused compensation kernel.
+
 ## Installation
 
 Linux, NVIDIA Hopper GPU, Python 3.10+, PyTorch 2.5+ with CUDA, Triton 3.1+, FlashInfer 0.2.10,
